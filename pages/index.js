@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
 import RecipeListTitle from "../components/homepage/RecipeListTitle";
-import Image from "next/image";
+import Footer from "../components/homepage/Footer";
 
 export default function Home() {
   return (
@@ -28,41 +28,7 @@ export default function Home() {
             <RecipeList />
           </div>
         </div>
-        <footer className="row fixedFooter ">
-          <div className="col-3">
-            <Image
-              src="/images/home.svg"
-              width="30vw"
-              height="30vh"
-              alt="HomeMenuIcon"
-            />
-          </div>
-          <div className="col-3">
-            <Image
-              src="/images/plus-square.svg"
-              width="30vw"
-              height="30vh"
-              alt="HomeMenuIcon"
-            />
-          </div>
-          <div className="col-3">
-            <Image
-              src="/images/message-circle.svg"
-              width="30vw"
-              height="30vh"
-              alt="HomeMenuIcon"
-            />
-          </div>
-          <div className="col-3">
-            <Image
-              src="/images/user.svg"
-              width="30vw"
-              height="30vh"
-              alt="HomeMenuIcon"
-            />
-          </div>
-        </footer>
-        {/* <footer className="footer fixedFooter ">dsadasdasdasds</footer> */}
+        <Footer />
       </div>
     </div>
   );
