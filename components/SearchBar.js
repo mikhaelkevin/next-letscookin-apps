@@ -13,7 +13,7 @@ export default function SearchBar() {
         <div className="input-group">
           <input
             type="text"
-            className="form-control form-control-lg defaultBox fontResponsive"
+            className="form-control form-control-lg defaultBox"
             placeholder="Search pasta, bread, etc"
           />
           <button type="submit" className="input-group-text defaultBox">

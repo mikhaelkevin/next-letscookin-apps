@@ -20,20 +20,18 @@ export default function NewRecipe(props) {
         {data.map((recipe) => (
           <SwiperSlide key={recipe.id}>
             <Link href={`/recipe/${recipe.id}`}>
-              <a>
-                <div className="card swiperCardBody p-1">
-                  <img
-                    src={
-                      recipe.recipe_picture
-                        ? recipe.recipe_picture
-                        : "/images/image_notfound"
-                    }
-                    alt="Recipe Swiper Image"
-                    className="w-100 h-100"
-                  />
-                  <p>{recipe.title}</p>
-                </div>
-              </a>
+              <div className="card swiperCardBody p-1">
+                <img
+                  src={
+                    recipe.recipe_picture
+                      ? recipe.recipe_picture
+                      : "/images/image_notfound.png"
+                  }
+                  alt="Recipe Swiper Image"
+                  className="w-100 h-100"
+                />
+                <p>{recipe.title}</p>
+              </div>
             </Link>
           </SwiperSlide>
         ))}
