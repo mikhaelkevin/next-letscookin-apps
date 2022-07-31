@@ -45,7 +45,7 @@ export default function Home(props) {
         </div>
         <NewRecipe data={newRecipe} />
         <div className={styles.recipeContent}>
-          <RecipeListTitle />
+          <h1 className="fontResponsive">Recipes</h1>
           <div>
             <RecipeList data={recipeList} />
           </div>

@@ -4,9 +4,9 @@ import React from "react";
 export default function RecipeList(props) {
   const { data } = props;
   return (
-    <div>
+    <>
       {data.map((recipe, index) => (
-        <div className="card my-3 recipeList" key={recipe.id}>
+        <div className="card  my-3 recipeList" key={recipe.id}>
           <div className="row">
             <div className="col-4">
               <img
@@ -28,6 +28,6 @@ export default function RecipeList(props) {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

@@ -20,6 +20,11 @@ a {
   border: none !important;
 }
 
+.defaultBox:focus{
+  border-color: #EFC81A !important;
+  box-shadow: inset 0 1px 1px rgba(239, 200, 26, 0.75), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+}
+
 .recipeListLink {
   display: flex;
   justify-content: flex-end;
@@ -97,12 +102,12 @@ a {
 .recipeList{
   position: relative;
   border-radius: 15px !important;
-  width: inherit !important;
-  height: inherit !important;
 }
 
 .recipeList img{
-  object-fit: cover;
+  object-fit: cover !important;
+  position: center !important;
+  height: 124px !important;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
