@@ -5,7 +5,8 @@ import { FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 
-export default function NewRecipe() {
+export default function NewRecipe(props) {
+  const { data } = props;
   return (
     <div>
       <Swiper
@@ -15,52 +16,22 @@ export default function NewRecipe() {
         slidesPerView={3}
         className="mb-5"
       >
-        <SwiperSlide>
-          <div className="card swiperCardBody p-1">
-            <img
-              src="/images/satepadang.jfif"
-              alt="swiper image"
-              className="w-100 h-100"
-            />
-            <p>Sate Padang Khas Bandung</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card swiperCardBody p-1">
-            <img
-              src="/images/satepadang.jfif"
-              alt="swiper image"
-              className="w-100 h-100"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card swiperCardBody p-1">
-            <img
-              src="/images/satepadang.jfif"
-              alt="swiper image"
-              className="w-100 h-100"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card swiperCardBody p-1">
-            <img
-              src="/images/satepadang.jfif"
-              alt="swiper image"
-              className="w-100 h-100"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="card swiperCardBody p-1">
-            <img
-              src="/images/satepadang.jfif"
-              alt="swiper image"
-              className="w-100 h-100"
-            />
-          </div>
-        </SwiperSlide>
+        {data.map((recipe) => (
+          <SwiperSlide key={recipe.id}>
+            <div className="card swiperCardBody p-1">
+              <img
+                src={
+                  recipe.recipe_picture
+                    ? recipe.recipe_picture
+                    : "/images/image_notfound"
+                }
+                alt="Recipe Swiper Image"
+                className="w-100 h-100"
+              />
+              <p>{recipe.title}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

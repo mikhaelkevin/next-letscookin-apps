@@ -10,7 +10,7 @@ export default function RecipeListTitle() {
       <div className="col-6 recipeListLink">
         <Link href="#/">
           <a>
-            <h3 className="fontResponsive">{"More +"}</h3>
+            <h3 className="fontResponsive">{"More Info"}</h3>
           </a>
         </Link>
       </div>

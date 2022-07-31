@@ -30,7 +30,11 @@ a {
 
 .recipeListLink a{
   text-decoration: none;
-  color: black;
+  color: blueviolet;
+}
+
+.recipeListLink a:hover{
+  color: #EFC81A;
 }
 
 .swiperCardBody{
@@ -76,6 +80,32 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.buttonStyle:hover{
+  background-color: #EFC81A !important;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+.mainContainer {
+  height: 100vh;
+  /* max-width: 100vw; */
+}
+
+.recipeList{
+  position: relative;
+  border-radius: 15px !important;
+  width: inherit !important;
+  height: inherit !important;
+}
+
+.recipeList img{
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 @media (prefers-color-scheme: dark) {
