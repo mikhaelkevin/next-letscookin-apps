@@ -5,15 +5,14 @@ import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
 import RecipeListTitle from "../components/homepage/RecipeListTitle";
 import Footer from "../components/homepage/Footer";
-import axios from "axios";
 
 export const getStaticProps = async () => {
   try {
     const newRecipeResponse = await fetch(
-      "http://letscookin-app.herokuapp.com/letscookinapps/recipes/new-recipe/"
+      `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
     );
     const recipeList = await fetch(
-      "http://letscookin-app.herokuapp.com/letscookinapps/recipes/"
+      `${process.env.API_URL}/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList?.json();
@@ -24,6 +23,7 @@ export const getStaticProps = async () => {
         newRecipe: newRecipeData,
         recipeList: recipeListData,
       },
+      revalidate: 3,
     };
   } catch (error) {
     console.log("error", error);

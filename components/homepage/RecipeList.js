@@ -5,7 +5,7 @@ export default function RecipeList(props) {
   const { data } = props;
   return (
     <div>
-      {data.map((recipe) => (
+      {data.map((recipe, index) => (
         <div className="card my-3 recipeList" key={recipe.id}>
           <div className="row">
             <div className="col-4">
