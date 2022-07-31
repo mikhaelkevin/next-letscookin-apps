@@ -69,7 +69,12 @@ a {
 }
 
 .fontResponsive {
-  font-size: calc(0.75em + 1vw);
+  font-size: calc(0.75em + 1vw) !important;
+  font-weight: 500 !important;
+}
+.subFontResponsive {
+  font-size: calc(0.75em + 0.5vw) !important;
+  font-weight: 300 !important;
 }
 
 .fixedFooter {
@@ -108,8 +113,7 @@ a {
   object-fit: cover !important;
   position: center !important;
   height: 124px !important;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px;
 }
 
 @media (prefers-color-scheme: dark) {

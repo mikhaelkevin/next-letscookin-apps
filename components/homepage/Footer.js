@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className="fixedFooter">
       <div className="row">
         <div className="col-3">
-          <div className="btn buttonStyle">
+          <div className="btn buttonStyle" onClick={() => menuLink("recipe")}>
             <Image
               src="/images/home.svg"
               width="30vw"

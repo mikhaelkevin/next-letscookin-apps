@@ -3,7 +3,6 @@ import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
-import RecipeListTitle from "../components/homepage/RecipeListTitle";
 import Footer from "../components/homepage/Footer";
 
 export const getStaticProps = async () => {
