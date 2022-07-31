@@ -37,20 +37,18 @@ export default function Home(props) {
       <Head>
         <title>Homepage</title>
       </Head>
-      <div className="col-lg-4 offset-lg-4 col-sm-12 col-12 mainContainer">
-        <SearchBar />
-        <div className={styles.newRecipeContent}>
-          <h1 className="fontResponsive">New Recipes</h1>
-        </div>
-        <NewRecipe data={newRecipe} />
-        <div className={styles.recipeContent}>
-          <h1 className="fontResponsive">Recipes</h1>
-          <div>
-            <RecipeList data={recipeList} />
-          </div>
-        </div>
-        <Footer />
+      <SearchBar />
+      <div className={styles.newRecipeContent}>
+        <h1 className="fontResponsive">New Recipes</h1>
       </div>
+      <NewRecipe data={newRecipe} />
+      <div className={styles.recipeContent}>
+        <h1 className="fontResponsive">Recipes</h1>
+        <div>
+          <RecipeList data={recipeList} />
+        </div>
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }

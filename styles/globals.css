@@ -77,6 +77,11 @@ a {
   font-weight: 300 !important;
 }
 
+.detailRecipeAuthor{
+  font-size: calc(1em + 1vw) !important;
+  font-weight: 500 !important;
+}
+
 .fixedFooter {
   position: sticky;
   bottom: 0;
@@ -116,12 +121,73 @@ a {
   border-radius: 15px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.detailRecipePicture {
+  width: 100% !important;
+  height: 50vh !important;
+  object-fit: cover;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.backButtonDetailRecipe{
+  border: none !important;
+  position: relative;
+  width: 15% !important;
+  height: 15% !important;
+  margin-top: 2%;
+}
+
+.backButtonDetailRecipe:hover{
+  border: 0 !important;
+  outline: none !important;
+}
+
+.topDetail{
+  margin-bottom: -2%;
+  height: 50vh !important;
+}
+
+.topDetailTitle{
+  position: absolute !important;
+  bottom: 0 !important;
+  background-color: rgba(255,255,255,0) !important;
+}
+
+.bottomDetail{
+  padding: 0 !important;
+  height: 51.3vh !important;
+  border-bottom-left-radius: 0% !important;
+  border-bottom-right-radius: 0% !important;
+  background-color: #FEFEFE;
+  border: 0 !important;
+}
+
+.bottomDetailNavtabFont{
+  font-size: calc(0.75em + 0.5vw) !important;
+  font-weight: 400 !important;
+  color: black !important;
+}
+
+.bottomDetail .nav-tabs:active{
+  border-bottom: 0 !important;
+}
+
+.scroll {
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.commentAvatar{
+  border-radius: 50%;
+}
+
+.colAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colComment{
+  display: flex;
+  align-items: center;
 }

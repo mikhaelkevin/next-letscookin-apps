@@ -7,14 +7,16 @@ export default function Footer() {
     <div className="fixedFooter">
       <div className="row">
         <div className="col-3">
-          <div className="btn buttonStyle" onClick={() => menuLink("recipe")}>
-            <Image
-              src="/images/home.svg"
-              width="30vw"
-              height="30vh"
-              alt="HomeMenuIcon"
-            />
-          </div>
+          <Link href="/">
+            <div className="btn buttonStyle">
+              <Image
+                src="/images/home.svg"
+                width="30vw"
+                height="30vh"
+                alt="HomeMenuIcon"
+              />
+            </div>
+          </Link>
         </div>
         <div className="col-3">
           <div className="btn buttonStyle">

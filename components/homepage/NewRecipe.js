@@ -25,7 +25,7 @@ export default function NewRecipe(props) {
                   src={
                     recipe.recipe_picture
                       ? recipe.recipe_picture
-                      : "/images/image_notfound"
+                      : "/images/image_notfound.png"
                   }
                   alt="Recipe Swiper Image"
                   className="w-100 h-100"
