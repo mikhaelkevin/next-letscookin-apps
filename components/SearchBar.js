@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function SearchBar() {
   const [searchValue, setSearchValue] = useState("");
+  const [valueNotValid, setValueNotValid] = useState(false);
 
   const router = useRouter();
   const searchSubmitted = (e) => {
     e.preventDefault();
+    if (!searchValue.trim()) {
+      setValueNotValid(true);
+      return;
+    }
     localStorage.setItem("search", searchValue);
     router.push("/recipe");
   };
 
+  useEffect(() => setValueNotValid(false), []);
+
   return (
-    <div className="col-lg-10  col-sm-10 col-10 offset-1 py-4 mb-3">
+    <div className="col-lg-10 col-sm-10 col-10 offset-1 py-4 mb-3">
       <form onSubmit={(e) => searchSubmitted(e)}>
         <div className="input-group">
           <input
@@ -32,6 +39,11 @@ export default function SearchBar() {
           </button>
         </div>
       </form>
+      {valueNotValid && (
+        <div className="alert alert-danger mt-3 text-center">
+          Type something to search a recipe
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./homepage/Footer";
+import Footer from "./Footer";
 
 export default function Layouts({ children }) {
   return (

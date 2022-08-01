@@ -6,12 +6,11 @@ export default function RecipeList(props) {
   const { data } = props;
   return (
     <>
-      {data.map((recipe, index) => (
-        <Link href={`/recipe/${recipe.id}`} key={recipe.id}>
-          {/* <a style={{ textDecoration: "none", color: "black" }}> */}
-          <div className="card border-0 my-3 recipeList">
-            <div className="row">
-              <div className="col-4">
+      {data?.map((recipe, index) => (
+        <div className="card border-0 my-3 recipeList" key={recipe.id}>
+          <div className="row">
+            <div className="col-4">
+              <Link href={`/recipe/${recipe.id}`}>
                 <img
                   src={
                     recipe?.recipe_picture
@@ -21,17 +20,18 @@ export default function RecipeList(props) {
                   alt="recipe icon"
                   className="w-100 h-100"
                 />
-              </div>
-              <div className="col-8">
-                <div className="card-body">
-                  <p className="fontResponsive">{recipe.title}</p>
-                  <p className="subFontResponsive">by {recipe.author}</p>
-                </div>
+              </Link>
+            </div>
+            <div className="col-8">
+              <div className="card-body">
+                <p className="fontResponsive">{recipe.title}</p>
+                <p className="subFontResponsive">
+                  by {recipe.author || recipe.name}
+                </p>
               </div>
             </div>
           </div>
-          {/* </a> */}
-        </Link>
+        </div>
       ))}
     </>
   );
