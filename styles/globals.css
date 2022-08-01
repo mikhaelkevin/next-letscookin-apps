@@ -216,3 +216,7 @@ a {
   justify-content: center!important;
   align-items: center !important;
 }
+
+.themeColor{
+  color:rgba(239, 200, 26)
+}

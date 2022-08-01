@@ -53,7 +53,7 @@ export default function DefaultRecipe() {
           >
             {"<"}
           </button>
-          <span className="fontResponsive">Recipe List</span>
+          <span className="fontResponsive themeColor">Recipe List</span>
         </div>
         <div className={styles.pageDefault}>
           {isError && (
@@ -65,7 +65,6 @@ export default function DefaultRecipe() {
               </div>
             </div>
           )}
-          {console.log(fetchResponse)}
           {!isError && fetchResponse && (
             <div className={styles.recipeContent}>
               <RecipeList data={fetchResponse} />
