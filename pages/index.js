@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
-import Footer from "../components/homepage/Footer";
+import React from "react";
 
 export const getStaticProps = async () => {
   try {
@@ -32,6 +32,8 @@ export const getStaticProps = async () => {
 export default function Home(props) {
   const { newRecipe, recipeList } = props;
 
+  React.useEffect(() => localStorage.removeItem("search"), []);
+
   return (
     <div>
       <Head>
@@ -48,7 +50,6 @@ export default function Home(props) {
           <RecipeList data={recipeList} />
         </div>
       </div>
-      <Footer />
     </div>
-  )
+  );
 }

@@ -25,7 +25,7 @@ export default function RecipeList(props) {
               <div className="col-8">
                 <div className="card-body">
                   <p className="fontResponsive">{recipe.title}</p>
-                  <p className="subFontResponsive">{recipe.author}</p>
+                  <p className="subFontResponsive">by {recipe.author}</p>
                 </div>
               </div>
             </div>
