@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
 a {
@@ -75,6 +74,7 @@ a {
 .subFontResponsive {
   font-size: calc(0.75em + 0.5vw) !important;
   font-weight: 300 !important;
+  
 }
 
 .detailRecipeAuthor{
@@ -190,4 +190,29 @@ a {
 .colComment{
   display: flex;
   align-items: center;
+}
+
+.mediumErrorFont{
+  text-align: center;
+  color: gray !important;
+}
+
+.pageHeader{
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+}
+
+.pageHeader button{
+  height: 100;
+  width: 100;
+  position: absolute;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.pageHeader span{
+  display: flex !important;
+  justify-content: center!important;
+  align-items: center !important;
 }

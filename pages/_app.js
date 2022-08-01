@@ -1,11 +1,12 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
+import Layouts from "../components/Layouts";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="col-lg-4 offset-lg-4 col-sm-12 col-12 mainContainer">
+    <Layouts>
       <Component {...pageProps} />
-    </div>
+    </Layouts>
   );
 }
 

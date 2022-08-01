@@ -36,7 +36,7 @@ export default function TopDetail(props) {
         <div className="row px-3 h-100 mx-2">
           <div className="col-6 col-xl-8" style={{ color: "white" }}>
             <p className="detailRecipeAuthor mb-0">{title}</p>
-            <p className="subFontResponsive">{author}</p>
+            <p className="subFontResponsive">by {author}</p>
           </div>
           <div className="col-6 col-xl-4 d-flex justify-content-center">
             {/* Put button bookmark and like here*/}

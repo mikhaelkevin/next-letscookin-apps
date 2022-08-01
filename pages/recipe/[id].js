@@ -6,7 +6,6 @@ import axios from "axios";
 import TopDetail from "../../components/detailRecipe/TopDetail";
 import Image from "next/image";
 import Navtab from "../../components/detailRecipe/Navtab";
-import Footer from "../../components/homepage/Footer";
 
 export const getStaticPaths = async () => {
   try {
@@ -119,7 +118,6 @@ export default function DetailRecipe({ detailRecipe }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
