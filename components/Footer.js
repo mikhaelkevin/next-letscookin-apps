@@ -8,14 +8,16 @@ export default function Footer() {
       <div className="row">
         <div className="col-3">
           <Link href="/">
-            <div className="btn buttonStyle">
-              <Image
-                src="/images/home.svg"
-                width="30vw"
-                height="30vh"
-                alt="HomeMenuIcon"
-              />
-            </div>
+            <a>
+              <div className="btn buttonStyle">
+                <Image
+                  src="/images/home.svg"
+                  width="30vw"
+                  height="30vh"
+                  alt="HomeMenuIcon"
+                />
+              </div>
+            </a>
           </Link>
         </div>
         <div className="col-3">
