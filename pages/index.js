@@ -8,10 +8,10 @@ import React from "react";
 export const getStaticProps = async () => {
   try {
     const newRecipeResponse = await fetch(
-      `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
+      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/new-recipe/`
     );
     const recipeList = await fetch(
-      `${process.env.API_URL}/letscookinapps/recipes/`
+      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList?.json();
