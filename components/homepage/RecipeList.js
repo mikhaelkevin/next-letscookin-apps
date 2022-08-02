@@ -11,15 +11,17 @@ export default function RecipeList(props) {
           <div className="row">
             <div className="col-4">
               <Link href={`/recipe/${recipe.id}`}>
-                <img
-                  src={
-                    recipe?.recipe_picture
-                      ? recipe?.recipe_picture
-                      : "images/image_notfound.png"
-                  }
-                  alt="recipe icon"
-                  className="w-100 h-100"
-                />
+                <a>
+                  <img
+                    src={
+                      recipe?.recipe_picture
+                        ? recipe?.recipe_picture
+                        : "images/image_notfound.png"
+                    }
+                    alt="recipe icon"
+                    className="w-100 h-100"
+                  />
+                </a>
               </Link>
             </div>
             <div className="col-8">
