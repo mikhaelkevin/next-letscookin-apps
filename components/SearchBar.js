@@ -13,7 +13,7 @@ export default function SearchBar() {
       setValueNotValid(true);
       return;
     }
-    localStorage.setItem("search", searchValue);
+    localStorage.setItem("search", searchValue.toLowerCase());
     router.push("/recipe");
   };
 
