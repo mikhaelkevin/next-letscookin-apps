@@ -1,0 +1,54 @@
+.mainPage{
+    min-height: 100vh;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.userLoginIcon{
+    background-color: #C4C4C4;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    width: 20vh;
+    margin-top: 5vh;
+    border-radius: 100%;
+
+}
+
+.loginTitle{
+    display: inline-block;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.loginInputBox{
+    margin-top: 5vh;
+}
+
+.loginInputBox input, .loginInputBox span{
+    background-color: #F5F5F5;
+    border: none;
+    height: 60px;
+}
+
+.loginInputBox input{
+    border-radius: 0px 20px 20px 0px !important;
+}
+
+.loginInputBox span{
+    border-radius: 20px 0px 0px 20px !important;
+}
+
+
+.loginInputBox button {
+    height: 60px;
+}
+
+.loginInputBox a{
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.loginInputBox a:hover {
+    color: blue !important;
+}
