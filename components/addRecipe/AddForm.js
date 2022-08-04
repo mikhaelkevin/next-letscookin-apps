@@ -18,6 +18,10 @@ const AddForm = ({ data, setter }) => {
     setter({ errorStatus: false, successStatus: false });
     e.preventDefault();
 
+    const revalidate = (key) => {
+      fetch("/api/revalidate", key);
+    };
+
     // Data declaration as new FormData object
     const formData = new FormData();
     formData.append("title", title);
@@ -31,12 +35,13 @@ const AddForm = ({ data, setter }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            "Authorization": `Bearer ${auth?.token}`,
+            Authorization: `Bearer ${auth?.token}`,
           },
         }
       );
       setter({ successStatus: true, message: response?.data?.message });
-      setTimeout(() => router.replace("/"), 2000);
+      revalidate(process.env.SECRET_KEY);
+      setTimeout(() => router.push("/"), 2000);
     } catch (error) {
       setter({
         errorStatus: true,
