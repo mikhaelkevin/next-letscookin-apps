@@ -7,7 +7,7 @@ const nextConfig = {
   },
   env: {
     CLIENT_API_URL: process.env.API_URL,
-    SECRET_KEY: process.env.SECRET_KEY,
+    OTHER_SECRET_KEY: process.env.SECRET_KEY,
   },
 };
 

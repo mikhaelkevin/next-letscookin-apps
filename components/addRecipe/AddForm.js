@@ -13,14 +13,18 @@ const AddForm = ({ data, setter }) => {
 
   const router = useRouter();
 
+  const revalidate = async (key) => {
+    await axios.post("/api/revalidate-homepage", {
+      key,
+    });
+    //return {revalidate: true} if success
+    //return error if fail
+  };
+
   const requestAddRecipe = async (e) => {
     // Refersh error and success to default
     setter({ errorStatus: false, successStatus: false });
     e.preventDefault();
-
-    const revalidate = (key) => {
-      fetch("/api/revalidate", key);
-    };
 
     // Data declaration as new FormData object
     const formData = new FormData();
@@ -40,9 +44,11 @@ const AddForm = ({ data, setter }) => {
         }
       );
       setter({ successStatus: true, message: response?.data?.message });
-      revalidate(process.env.SECRET_KEY);
+      await revalidate(process.env.OTHER_SECRET_KEY);
       setTimeout(() => router.push("/"), 2000);
     } catch (error) {
+      console.log("error :>> ", error);
+
       setter({
         errorStatus: true,
         message:
