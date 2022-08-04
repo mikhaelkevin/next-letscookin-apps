@@ -6,7 +6,7 @@ import RecipeList from "../components/homepage/RecipeList";
 import React from "react";
 // import { useSelector } from "react-redux";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const newRecipeResponse = await fetch(
       `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
         newRecipe: newRecipeData,
         recipeList: recipeListData,
       },
-      revalidate: 5,
+      // revalidate: 5,
     };
   } catch (error) {
     console.log("error", error);
