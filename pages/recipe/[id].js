@@ -21,6 +21,7 @@ export const getStaticPaths = async () => {
           id: recipe?.id?.toString(),
         },
       })),
+      revalidate: 30,
       fallback: false,
     };
   } catch (error) {
