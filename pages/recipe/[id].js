@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
           id: recipe?.id?.toString(),
         },
       })),
-      revalidate: 30,
+      fallback: false,
     };
   } catch (error) {
     console.log("error", error);
@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
       props: {
         detailRecipe: detailRecipeData,
       },
-      revalidate: 5,
+      revalidate: 30,
     };
   } catch (error) {
     console.log("error", error);
