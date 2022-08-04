@@ -4,14 +4,15 @@ import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export const getStaticProps = async () => {
   try {
     const newRecipeResponse = await fetch(
-      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/new-recipe/`
+      `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
     );
     const recipeList = await fetch(
-      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/`
+      `${process.env.API_URL}/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList?.json();

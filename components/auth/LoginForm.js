@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/features/user/loginSlice";
 
 export default function LoginForm() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +21,9 @@ export default function LoginForm() {
       e.preventDefault();
       const response = await axios.post("/api/login", { email, password });
       setIsSuccess(true);
+      dispatch(
+        login({ token: response?.data?.token, user: response?.data?.user })
+      );
       setTimeout(() => {
         router.push("/");
       }, 2000);
