@@ -31,7 +31,7 @@ const AddForm = ({ data, setter }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${auth?.token}`,
+            "Authorization": `Bearer ${auth?.token}`,
           },
         }
       );
