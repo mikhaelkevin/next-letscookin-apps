@@ -42,7 +42,6 @@ const AddRecipe = () => {
             setIsSuccess(object.successStatus);
             setIsError(object.errorStatus);
             setMessage(object.message);
-            console.log(object);
           }}
         />
       </div>
