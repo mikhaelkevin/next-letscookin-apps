@@ -19,11 +19,6 @@ const AddRecipe = () => {
     }
   });
 
-  //   useEffect(() => {
-  //     router.prefetch("/");
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, [isSuccess]);
-
   return (
     <>
       <Head>
