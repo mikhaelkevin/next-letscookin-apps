@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
         newRecipe: newRecipeData,
         recipeList: recipeListData,
       },
-      // revalidate: 5,
+      revalidate: 30,
     };
   } catch (error) {
     console.log("error", error);
