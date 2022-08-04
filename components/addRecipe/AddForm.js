@@ -45,10 +45,8 @@ const AddForm = ({ data, setter }) => {
       );
       setter({ successStatus: true, message: response?.data?.message });
       await revalidate(process.env.OTHER_SECRET_KEY);
-      setTimeout(() => router.push("/"), 2000);
+      setTimeout(() => router.prefetch("/"), 2000);
     } catch (error) {
-      console.log("error :>> ", error);
-
       setter({
         errorStatus: true,
         message:
