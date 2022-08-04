@@ -29,14 +29,18 @@ export default function Footer() {
               </Link>
             </div>
             <div className="col-3">
-              <div className="btn buttonStyle">
-                <Image
-                  src="/images/plus-square.svg"
-                  width="30vw"
-                  height="30vh"
-                  alt="AddRecipeIcon"
-                />
-              </div>
+              <Link href="/recipe/add">
+                <a>
+                  <div className="btn buttonStyle">
+                    <Image
+                      src="/images/plus-square.svg"
+                      width="30vw"
+                      height="30vh"
+                      alt="AddRecipeIcon"
+                    />
+                  </div>
+                </a>
+              </Link>
             </div>
             <div className="col-3">
               <div className="btn buttonStyle">

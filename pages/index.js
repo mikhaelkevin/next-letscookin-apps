@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export const getStaticProps = async () => {
   try {
