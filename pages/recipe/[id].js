@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
       props: {
         detailRecipe: detailRecipeData,
       },
-      revalidate: 30,
+      revalidate: 5,
     };
   } catch (error) {
     console.log("error", error);
