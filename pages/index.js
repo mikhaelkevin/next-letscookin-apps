@@ -6,7 +6,7 @@ import RecipeList from "../components/homepage/RecipeList";
 import React from "react";
 // import { useSelector } from "react-redux";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const newRecipeResponse = await fetch(
       `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
