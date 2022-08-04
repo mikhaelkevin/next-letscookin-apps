@@ -10,7 +10,7 @@ import Navtab from "../../components/detailRecipe/Navtab";
 export const getStaticPaths = async () => {
   try {
     const recipeList = await fetch(
-      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/`
+      `${process.env.API_URL}/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList.json();
@@ -31,7 +31,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   try {
     const detailRecipe = await axios.post(
-      `https://letscookin-app.herokuapp.com/letscookinapps/recipes/detail/`,
+      `${process.env.API_URL}/letscookinapps/recipes/detail/`,
       { id: params?.id }
     );
     const detailRecipeData = await detailRecipe?.data;

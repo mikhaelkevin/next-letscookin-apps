@@ -88,16 +88,17 @@ body {
   align-items: center;
 }
 
-.buttonStyle:hover{
+.buttonStyle:hover, .buttonStyle:focus{
   background-color: #EFC81A !important;
   width: 100%;
   height: 100%;
   margin: 0 !important;
   border: 0 !important;
+  outline: 0 !important;
 }
 
 .mainContainer {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .recipeList{
