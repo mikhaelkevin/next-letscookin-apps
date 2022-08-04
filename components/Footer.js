@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="fixedFooter">
           <div className="row">
             <div className="col-3">
-              <Link href="/">
+              <Link href="/" replace>
                 <a>
                   <button className="btn buttonStyle">
                     <Image
