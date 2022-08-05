@@ -63,3 +63,7 @@
     object-fit: cover;
     border-radius: 15px;
 }
+
+.recipeMenu {
+    border-radius: 0 !important;
+}
