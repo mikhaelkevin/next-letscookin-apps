@@ -30,7 +30,7 @@ export const getStaticProps = async (req, res) => {
 };
 
 export default function Home(props) {
-  const { newRecipe, recipeList, tes } = props;
+  const { newRecipe, recipeList } = props;
 
   React.useEffect(() => localStorage.removeItem("search"), []);
 
