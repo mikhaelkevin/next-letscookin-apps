@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "../styles/Login.module.css";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import LoginForm from "../components/auth/LoginForm";
 
 export default function LoginPage() {
-  const router = useRouter();
   return (
     <>
       <Head>

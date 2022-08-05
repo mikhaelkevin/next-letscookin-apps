@@ -4,9 +4,8 @@ import SearchBar from "../components/SearchBar";
 import NewRecipe from "../components/homepage/NewRecipe";
 import RecipeList from "../components/homepage/RecipeList";
 import React from "react";
-// import { useSelector } from "react-redux";
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (req, res) => {
   try {
     const newRecipeResponse = await fetch(
       `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
@@ -31,7 +30,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Home(props) {
-  const { newRecipe, recipeList } = props;
+  const { newRecipe, recipeList, tes } = props;
 
   React.useEffect(() => localStorage.removeItem("search"), []);
 
