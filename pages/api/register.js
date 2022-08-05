@@ -10,7 +10,6 @@ const register = async (req, res) => {
 
     res.status(200).send(response?.data);
   } catch (error) {
-    console.log("error", error);
     const status = error?.response?.status || 500;
     const message = error?.response?.data?.message;
     res.status(status).send(message);

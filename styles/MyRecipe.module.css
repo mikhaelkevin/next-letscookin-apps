@@ -1,0 +1,69 @@
+.mainPage {
+    min-height: 100vh;
+    min-width: inherit;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 3vh 1rem 0 1rem;
+    align-items: center;
+}
+
+.header button{
+    height: 6vh !important;
+    width: 6vh !important;
+    cursor: pointer;
+}
+
+.header h2{
+    margin-left: 6vw;
+    color: #EEC302;
+}
+
+@media only screen and (max-width: 350px) { 
+    .header h2{
+        margin-left: 45px;
+    }
+
+    .header button {
+        height: 10vh !important;
+        width: 10vh !important;
+    }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 600px) { 
+    .header h2{
+        margin-left: 20vw;
+    }
+
+    .header button {
+        height: 7vh !important;
+        width: 7vh !important;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) { 
+    .header h2{
+        margin-left: 33vw;
+    }
+
+    .header button {
+        height: 5vh !important;
+        width: 5vh !important;
+    }
+}
+
+.content{
+    padding: 1rem;
+    margin-top: 3vh;
+}
+
+.content img{
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.recipeMenu {
+    border-radius: 0 !important;
+}

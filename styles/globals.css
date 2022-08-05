@@ -216,3 +216,12 @@ body {
 .disableTextColor{
   color: #C4C4C4;
 }
+
+.no-padding{
+  padding: 0 !important;
+}
+
+.box-shadow{
+  border: none !important;
+  margin-bottom: 2vh;
+}

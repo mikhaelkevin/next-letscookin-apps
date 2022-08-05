@@ -33,7 +33,6 @@ export default function RegisterForm() {
     } catch (error) {
       setIsError(true);
       setErrorMessage(error?.response?.data);
-      console.log("error", error);
     }
   };
 

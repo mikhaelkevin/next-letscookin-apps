@@ -1,0 +1,79 @@
+.mainPage {
+    min-height: 100vh;
+    min-width: inherit;
+}
+
+.topSection {
+    min-height: 40vh;
+    top: 0;
+    background-color: #EEC302;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topSection img{
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.topSection h3{
+    margin-top: 3vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .topSection img{
+        height: 100px !important;
+        width: 100px !important;
+    }
+    
+}
+.bottomSection {
+    height: 60vh;
+    bottom: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.bottomMenu{
+    height: 69vh;
+    width: inherit !important;
+    margin-top: -3vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 25px 20px 0 20px;
+    background-color: white;
+    box-shadow: 1px 6px 5px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 6px 5px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 6px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bottomMenu img{
+    height: 7vh !important;
+    width: 7vh !important;
+}
+
+.bottomMenu span{
+    font-weight: 500 !important;
+    font-size: calc(1.3rem + 0.3vw);
+    padding-left: 2vw;
+}
+
+.bottomMenu button {
+    margin-left: auto !important;
+    background-color: none !important;
+    pointer-events: none;
+}
+
+.bottomMenu div:hover{
+    background-color: #E7E7E7;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #EEC302;
+}
+
+.bottomMenu a{
+    text-decoration: none;
+    color: black !important;
+}
