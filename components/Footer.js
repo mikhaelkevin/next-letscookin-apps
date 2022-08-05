@@ -52,14 +52,18 @@ export default function Footer() {
               </div>
             </div>
             <div className="col-3">
-              <div className="btn buttonStyle">
-                <Image
-                  src="/images/user.svg"
-                  width="30vw"
-                  height="30vh"
-                  alt="UserMenuIcon"
-                />
-              </div>
+              <Link href="/profile">
+                <a>
+                  <div className="btn buttonStyle">
+                    <Image
+                      src="/images/user.svg"
+                      width="30vw"
+                      height="30vh"
+                      alt="UserMenuIcon"
+                    />
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
