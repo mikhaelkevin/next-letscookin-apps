@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Profile.module.css";
-import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../redux/features/user/loginSlice";
 
 const ProfilePage = () => {
-  const { user } = useSelector((state) => state?.auth);
-  console.log("user :>> ", user);
+  const { auth } = useSelector((state) => state);
+  const { user } = auth;
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const logoutClicked = async () => {
+    await router.replace("/");
+    dispatch(logout());
+  };
+
+  useEffect(() => {
+    if (!auth?.token) {
+      router.replace("/login");
+    }
+  });
+
   return (
     <>
       <Head>
@@ -71,27 +87,26 @@ const ProfilePage = () => {
                 </div>
               </a>
             </Link>
-            <Link href="/profile/my-recipe">
-              <a>
-                <div className="d-flex align-items-center">
-                  <Image
-                    src="/images/logout.png"
-                    width="50px"
-                    height="50px"
-                    alt="profile-my-recipe-icon"
-                  />
-                  <span>Logout</span>
-                  <button className="btn">
-                    <Image
-                      src="/images/profile-arrow.svg"
-                      width="50px"
-                      height="50px"
-                      alt="profile-arrow-icon"
-                    />
-                  </button>
-                </div>
-              </a>
-            </Link>
+            <div
+              className="d-flex align-items-center"
+              onClick={() => logoutClicked()}
+            >
+              <Image
+                src="/images/logout.png"
+                width="50px"
+                height="50px"
+                alt="profile-my-recipe-icon"
+              />
+              <span>Logout</span>
+              <button className="btn">
+                <Image
+                  src="/images/profile-arrow.svg"
+                  width="50px"
+                  height="50px"
+                  alt="profile-arrow-icon"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
