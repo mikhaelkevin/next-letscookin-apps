@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../../styles/MyRecipe.module.css";
+import styles from "../../../styles/MyRecipe.module.css";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -44,6 +44,9 @@ const MyRecipePage = () => {
   };
 
   useEffect(() => {
+    if(!token){
+        router.push('/login')
+    }
     setIsSuccess(false);
     setAppendDelAlert(false);
     setIsLoading(false);
@@ -57,7 +60,6 @@ const MyRecipePage = () => {
       <Head>
         <title>My Recipe</title>
       </Head>
-
       <div className={styles.mainPage}>
         <div className={styles.header}>
           <button className="btn btn-light">
@@ -120,6 +122,10 @@ const MyRecipePage = () => {
                         width="30px"
                         height="30px"
                         alt="edit-icon"
+                        onClick={() => {
+                          router.push("/profile/my-recipe/edit");
+                          localStorage.setItem("recipeId", recipe.id);
+                        }}
                       />
                     </span>
                     <span>

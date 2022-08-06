@@ -94,7 +94,7 @@ export default function DetailRecipe({ detailRecipe }) {
       </Head>
       <div className={styles.mainPage}>
         <TopDetail data={recipeInformation} />
-        <div className="card bottomDetail">
+        <div className="card bottomDetail scroll">
           <Navtab menu={(menu) => setSelectedMenu(menu)} />
           <div className="p-3 h-100">
             {selectedMenu === "ingredients" && ingredientsData(ingredients)}

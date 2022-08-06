@@ -122,7 +122,6 @@ const AddForm = ({ data, setter }) => {
           placeholder="Add Video (Coming Soon)"
           aria-label="recipe-videos"
           aria-describedby="recipe-videos"
-          onChange={(e) => setEmail(e.target.value)}
           disabled
         />
       </div>

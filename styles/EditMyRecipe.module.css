@@ -1,0 +1,22 @@
+.mainPage {
+    min-height: 100vh;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    background-color: #E5E5E5;
+}
+
+.mainPage form{
+    margin-top: 5vh;
+}
+
+.mainPage form span,
+.mainPage form input,
+.mainPage form textarea {
+    background-color: white;
+    border: 0;
+    resize: none;
+}
+
+.mainPage button {
+    margin-top: 8vh;
+}
