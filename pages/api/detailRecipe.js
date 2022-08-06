@@ -9,7 +9,9 @@ const detailRecipe = async (req, res) => {
     );
     res.status(200).send(response?.data?.recipe);
   } catch (error) {
-    console.log("api error :>> ", error);
+    const status = error?.response?.status;
+    const message = error?.response?.data?.message || error?.response?.data;
+    res.status(status).send(message);
   }
 };
 

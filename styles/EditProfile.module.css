@@ -1,0 +1,33 @@
+.mainPage{
+    min-height: 94vh;
+    background-color: #E5E5E5;
+    padding: 0 1rem 0 1rem;
+}
+
+.topContent{
+    padding-top: 5vh;
+}
+.topContent button:hover{
+    color: none;
+    border: 0;
+}
+
+.mainContent{
+    margin-top: 5vh;
+}
+
+.mainContent form span{
+    border: 0;
+    background-color: white;
+    border-radius: 15px 0 0 15px;
+    
+}
+
+.mainContent form input{
+    border: 0;
+    border-radius: 0 15px 15px 0 !important;
+}
+
+.mainContent form button {
+    margin-top: 3vh;
+}

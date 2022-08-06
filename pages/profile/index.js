@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Profile.module.css";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/features/user/loginSlice";
@@ -12,17 +13,37 @@ const ProfilePage = () => {
   const { user } = auth;
   const dispatch = useDispatch();
   const router = useRouter();
+  const [currentUser, setCurrentUser] = useState({});
 
   const logoutClicked = async () => {
     await router.replace("/");
     dispatch(logout());
   };
 
+  const fetchCurrentUser = async (id) => {
+    try {
+      const response = await axios("/api/getCurrentUser", {
+        params: {
+          userId: id,
+        },
+      });
+      setCurrentUser({
+        name: response?.data?.name,
+        picture: response?.data?.profile_picture,
+      });
+      console.log("response", response);
+    } catch (error) {
+      console.log("error :>> ", error);
+    }
+  };
+
   useEffect(() => {
     if (!auth?.token) {
       router.replace("/login");
     }
-  });
+    fetchCurrentUser(user?.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -33,15 +54,15 @@ const ProfilePage = () => {
         <div className={styles.topSection}>
           <Image
             src={
-              user?.profile_picture
-                ? user?.profile_picture
+              currentUser?.picture
+                ? currentUser?.picture
                 : "/images/image_notfound.png"
             }
             width="130px"
             height="130px"
             alt="profile-picture"
           />
-          <h3>{user?.name}</h3>
+          <h3>{currentUser?.name}</h3>
         </div>
         <div className={styles.bottomSection}>
           <div className={styles.bottomMenu}>
