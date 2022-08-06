@@ -44,8 +44,8 @@ const MyRecipePage = () => {
   };
 
   useEffect(() => {
-    if(!token){
-        router.push('/login')
+    if (!token) {
+      router.push("/login");
     }
     setIsSuccess(false);
     setAppendDelAlert(false);
@@ -123,8 +123,11 @@ const MyRecipePage = () => {
                         height="30px"
                         alt="edit-icon"
                         onClick={() => {
-                          router.push("/profile/my-recipe/edit");
-                          localStorage.setItem("recipeId", recipe.id);
+                          router.push(
+                            `/profile/my-recipe/edit/?recipeId=${recipe.id}`,
+                            "/profile/my-recipe/edit",
+                            { shallow: true }
+                          );
                         }}
                       />
                     </span>

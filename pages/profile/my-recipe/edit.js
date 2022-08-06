@@ -5,12 +5,10 @@ import EditForm from "../../../components/recipe/EditForm";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-const RecipeEditPage = () => {
-  const recipeId = localStorage.getItem("recipeId");
-  const { token } = useSelector((state) => state?.auth);
-
-  console.log("recipeId, token :>> ", recipeId, token);
+const RecipeEditPage = (props) => {
   const router = useRouter();
+  const { recipeId } = router?.query;
+  const { token } = useSelector((state) => state?.auth);
 
   useEffect(() => {
     if (!token) {
