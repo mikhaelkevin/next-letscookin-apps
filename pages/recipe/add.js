@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import styles from "../../styles/AddRecipe.module.css";
 import Head from "next/head";
-import AddForm from "../../components/addRecipe/AddForm";
+import AddForm from "../../components/recipe/AddForm";
 
 const AddRecipe = () => {
   const { auth } = useSelector((state) => state);

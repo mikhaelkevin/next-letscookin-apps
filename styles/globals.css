@@ -147,7 +147,7 @@ body {
 
 .bottomDetail{
   padding: 0 !important;
-  height: 51.3vh !important;
+  max-height: 52vh !important;
   border-bottom-left-radius: 0% !important;
   border-bottom-right-radius: 0% !important;
   background-color: #FEFEFE;
