@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import styles from "../../styles/DetailRecipe.module.css";
 import axios from "axios";
 import TopDetail from "../../components/detailRecipe/TopDetail";
 import Image from "next/image";
 import Navtab from "../../components/detailRecipe/Navtab";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 export const getStaticPaths = async () => {
   try {
@@ -50,6 +52,23 @@ export const getStaticProps = async ({ params }) => {
 export default function DetailRecipe({ detailRecipe }) {
   // HELPER
   const [selectedMenu, setSelectedMenu] = React.useState("ingredients");
+  const [isPosting, setIsPosting] = React.useState(false);
+  const [newComment, setNewComment] = React.useState("");
+  const [isError, setIsError] = React.useState(false);
+  const [message, setMessage] = React.useState("");
+  const [isSuccess, setIsSuccess] = React.useState(false);
+
+  const router = useRouter();
+  const {
+    user: { id: userId },
+    token,
+  } = useSelector((state) => state?.auth);
+
+  useEffect(() => {
+    setIsSuccess(false);
+    setIsError(false);
+    setIsPosting(false);
+  }, []);
 
   // VARIABLE DECLARE
   const { recipe, userCommentary } = detailRecipe;
@@ -87,6 +106,35 @@ export default function DetailRecipe({ detailRecipe }) {
     ));
   };
 
+  const requestComment = async (e) => {
+    try {
+      setIsPosting(true);
+      setIsError(false);
+      e.preventDefault();
+      const response = await axios("/api/comment", {
+        params: {
+          recipeId: router?.query?.id,
+          userId,
+          newComment,
+          token,
+        },
+      });
+      setIsPosting(false);
+      setIsSuccess(true);
+      setMessage(response?.data);
+    } catch (error) {
+      setIsSuccess(false);
+      setIsPosting(false);
+      setIsError(true);
+      setMessage(
+        error?.response?.data ||
+          error?.response?.data?.message ||
+          "Something went wrong on client side"
+      );
+      console.log("error", error);
+    }
+  };
+
   return (
     <div>
       <Head>
@@ -97,6 +145,13 @@ export default function DetailRecipe({ detailRecipe }) {
         <div className="card bottomDetail scroll">
           <Navtab menu={(menu) => setSelectedMenu(menu)} />
           <div className="p-3 h-100">
+            {isError && (
+              <div className="alert alert-danger text-center">{message}</div>
+            )}
+
+            {isSuccess && (
+              <div className="alert alert-success text-center">{message}</div>
+            )}
             {selectedMenu === "ingredients" && ingredientsData(ingredients)}
 
             {selectedMenu === "videos" && (
@@ -115,6 +170,30 @@ export default function DetailRecipe({ detailRecipe }) {
                   {appendComment(userCommentary)}
                 </div>
               )}
+
+            {selectedMenu === "add comment" && (
+              <>
+                <form onSubmit={(e) => requestComment(e)}>
+                  <textarea
+                    name="add-comment"
+                    id=""
+                    className="w-100"
+                    rows="3"
+                    style={{ resize: "none" }}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    disabled={isPosting}
+                  />
+                  <div>
+                    <button
+                      className="btn btn-warning w-100"
+                      disabled={isPosting}
+                    >
+                      {isPosting ? "Posting..." : "POST"}
+                    </button>
+                  </div>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>
