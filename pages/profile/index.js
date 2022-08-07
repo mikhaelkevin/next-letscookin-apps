@@ -31,9 +31,8 @@ const ProfilePage = () => {
         name: response?.data?.name,
         picture: response?.data?.profile_picture,
       });
-      console.log("response", response);
     } catch (error) {
-      console.log("error :>> ", error);
+      // console.log("error :>> ", error);
     }
   };
 

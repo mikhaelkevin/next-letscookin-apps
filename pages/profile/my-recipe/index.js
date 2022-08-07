@@ -16,13 +16,16 @@ const MyRecipePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [delTarget, setDelTarget] = useState(0);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [message, setMessage] = useState("");
 
   const getMyRecipe = async (userId) => {
     try {
       const response = await axios.post("/api/myRecipe", { userId, token });
       setMyRecipe(response?.data);
     } catch (error) {
-      console.log("error :>> ", error);
+      setIsError(true);
+      setMessage(error?.response?.data?.message || error?.response?.data || 'Something went wrong when we try to get your recipe')
     }
   };
 
@@ -47,6 +50,7 @@ const MyRecipePage = () => {
     if (!token) {
       router.push("/login");
     }
+    setIsError(false);
     setIsSuccess(false);
     setAppendDelAlert(false);
     setIsLoading(false);
@@ -92,6 +96,9 @@ const MyRecipePage = () => {
               </div>
             </div>
           )}
+
+            {isError && <div className="alert alert-danger text-center">{message}</div>}
+
           {myRecipe?.map((recipe) => (
             <div className="card box-shadow" key={recipe.id}>
               <div className="row d-flex justify-content-center align-items-center">
