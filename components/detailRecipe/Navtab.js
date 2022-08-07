@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Navtab(props) {
+  const { token } = useSelector((state) => state?.auth);
+
   const [ingredientsIsActive, setIngredientsIsActive] =
     React.useState("active");
   const [videosIsActive, setVideosIsActive] = React.useState("");
   const [commentIsActive, setCommentIsActive] = React.useState("");
+  const [addCommentActive, setAddCommentActive] = React.useState("");
 
   const { menu } = props;
 
@@ -14,6 +18,7 @@ export default function Navtab(props) {
       setIngredientsIsActive("active");
       setVideosIsActive("");
       setCommentIsActive("");
+      setAddCommentActive("");
     }
 
     if (menuTitle === "videos") {
@@ -21,11 +26,21 @@ export default function Navtab(props) {
       setVideosIsActive("active");
       setIngredientsIsActive("");
       setCommentIsActive("");
+      setAddCommentActive("");
     }
 
     if (menuTitle === "comment") {
       menu(menuTitle);
       setCommentIsActive("active");
+      setIngredientsIsActive("");
+      setVideosIsActive("");
+      setAddCommentActive("");
+    }
+
+    if (menuTitle === "add comment" && token) {
+      menu(menuTitle);
+      setAddCommentActive("active");
+      setCommentIsActive("");
       setIngredientsIsActive("");
       setVideosIsActive("");
     }
@@ -57,6 +72,17 @@ export default function Navtab(props) {
           Comment
         </a>
       </li>
+
+      {token && (
+        <li className="nav-item">
+          <a
+            className={`nav-link bottomDetailNavtabFont ${addCommentActive}`}
+            onClick={() => menuSelector("add comment")}
+          >
+            Add Comment
+          </a>
+        </li>
+      )}
     </ul>
   );
 }
