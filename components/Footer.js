@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="col-3">
               <Link href="/">
                 <a>
-                  <button className="btn buttonStyle">
+                  <button type="button" className="btn buttonStyle">
                     <Image
                       src="/images/home.svg"
                       width="30vw"
@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="col-3">
               <Link href="/recipe/add">
                 <a>
-                  <button className="btn buttonStyle">
+                  <button type="button" className="btn buttonStyle">
                     <Image
                       src="/images/plus-square.svg"
                       width="30vw"
@@ -42,26 +42,26 @@ export default function Footer() {
               </Link>
             </div>
             <div className="col-3">
-              <div className="btn buttonStyle">
+              <button type="button" className="btn buttonStyle" disabled>
                 <Image
                   src="/images/message-circle.svg"
                   width="30vw"
                   height="30vh"
                   alt="ChatMenuIcon"
                 />
-              </div>
+              </button>
             </div>
             <div className="col-3">
               <Link href="/profile">
                 <a>
-                  <div className="btn buttonStyle">
+                  <button type="button" className="btn buttonStyle">
                     <Image
                       src="/images/user.svg"
                       width="30vw"
                       height="30vh"
                       alt="UserMenuIcon"
                     />
-                  </div>
+                  </button>
                 </a>
               </Link>
             </div>

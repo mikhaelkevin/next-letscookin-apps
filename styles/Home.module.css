@@ -7,6 +7,11 @@
     margin-right: 1rem;
 }
 
+.recipeContent .recipeListTitle{
+    display: flex;
+    justify-content: space-between;
+}
+
 .newRecipeContent{
     margin-left: 1rem;
 }

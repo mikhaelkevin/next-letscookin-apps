@@ -97,6 +97,11 @@ body {
   outline: 0 !important;
 }
 
+.buttonStyle:disabled {
+  outline: 0;
+  border: 0;
+}
+
 .mainContainer {
   min-height: 100vh;
 }

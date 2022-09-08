@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
@@ -31,8 +32,28 @@ export const getStaticProps = async (req, res) => {
 
 export default function Home(props) {
   const { newRecipe, recipeList } = props;
+  const totalRecipes = recipeList?.length;
 
-  React.useEffect(() => localStorage.removeItem("search"), []);
+  const [showData, setShowData] = React.useState(5);
+  const [dataSorting, setDataSorting] = React.useState('ASC');
+  const [recipeData, setRecipeData] = React.useState(recipeList?.slice(0, showData));
+
+  React.useEffect(() => {
+    localStorage.removeItem("search")
+  }, []);
+  
+  React.useEffect(() => {
+    console.log('recipeList', recipeList)
+    setRecipeData(recipeList?.slice(0, showData))
+    if(dataSorting === 'ASC'){
+      recipeList?.sort((a,b) => a?.title > b?.title ? 1 : -1)
+    }
+    
+    if(dataSorting === 'DESC'){
+      recipeList?.sort((a,b) => b?.title > a?.title ? 1 : -1)
+    }
+  } , [dataSorting, showData])
+
 
   return (
     <div>
@@ -45,9 +66,23 @@ export default function Home(props) {
       </div>
       <NewRecipe data={newRecipe} />
       <div className={styles.recipeContent}>
+      <div className={styles.recipeListTitle}>
         <h1 className="fontResponsive">Recipes</h1>
-        <div>
-          <RecipeList data={recipeList} />
+        <label htmlFor="sortBy">
+          Sort By {' '}
+        <select name="sortBy" id="sortBy" onChange={(e) => setDataSorting(e?.target?.value)}>
+          <option hidden/>
+          <option value="ASC">A - Z</option>
+          <option value="DESC">Z - A</option>
+        </select>
+        </label>
+      </div>
+        <div className="mb-3">
+          <RecipeList data={recipeData} sort={dataSorting} />
+        </div>
+        <div className="row d-flex justify-content-center mb-2">
+          {showData < totalRecipes && <button type="button" className="btn btn-primary w-50" onClick={() => setShowData(showData+5)}>Load more</button>}
+          {showData >= totalRecipes && <p className="text-center text-muted fst-italic">End of recipe list</p>}
         </div>
       </div>
     </div>
