@@ -4,7 +4,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const response = await axios.post(
-      `${process.env.API_URL}/letscookinapps/login/`,
+      `${process.env.API_URL}letscookinapps/login/`,
       {
         email,
         password,

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import SearchBar from "../components/SearchBar";
@@ -9,10 +8,11 @@ import React from "react";
 export const getStaticProps = async (req, res) => {
   try {
     const newRecipeResponse = await fetch(
-      `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
+      `${process.env.API_URL}letscookinapps/recipes/new-recipe/`
     );
+
     const recipeList = await fetch(
-      `${process.env.API_URL}/letscookinapps/recipes/`
+      `${process.env.API_URL}letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList?.json();

@@ -4,7 +4,7 @@ const detailRecipe = async (req, res) => {
   try {
     const { id } = req.query;
     const response = await axios.post(
-      `${process.env.CLIENT_API_URL}/letscookinapps/recipes/detail/`,
+      `${process.env.CLIENT_API_URL}letscookinapps/recipes/detail/`,
       { id }
     );
     res.status(200).send(response?.data?.recipe);

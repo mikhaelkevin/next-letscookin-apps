@@ -17,8 +17,6 @@ const AddForm = ({ data, setter }) => {
     await axios.post("/api/revalidate-homepage", {
       key,
     });
-    //return {revalidate: true} if success
-    //return error if fail
   };
 
   const requestAddRecipe = async (e) => {
@@ -34,7 +32,7 @@ const AddForm = ({ data, setter }) => {
     formData.append("userId", user?.id);
     try {
       const response = await axios.post(
-        `${process.env.CLIENT_API_URL}/letscookinapps/recipes/`,
+        `${process.env.CLIENT_API_URL}letscookinapps/recipes/`,
         formData,
         {
           headers: {

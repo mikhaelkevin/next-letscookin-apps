@@ -4,7 +4,7 @@ const myRecipe = async (req, res) => {
   try {
     const { userId, token } = req.body;
     const response = await axios.post(
-      `${process.env.CLIENT_API_URL}/letscookinapps/users/my-recipe`,
+      `${process.env.CLIENT_API_URL}letscookinapps/users/my-recipe`,
       { userId },
       {
         headers: {

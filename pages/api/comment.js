@@ -4,7 +4,7 @@ const comment = async (req, res) => {
   try {
     const { recipeId, userId, newComment, token } = req.query;
     const response = await axios.post(
-      `${process.env.CLIENT_API_URL}/letscookinapps/recipes/comment`,
+      `${process.env.CLIENT_API_URL}letscookinapps/recipes/comment`,
       {
         recipeId,
         userId,

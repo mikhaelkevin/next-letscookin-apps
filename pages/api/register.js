@@ -4,7 +4,7 @@ const register = async (req, res) => {
   try {
     const { name, email, phone, password } = req.body;
     const response = await axios.post(
-      `${process.env.API_URL}/letscookinapps/users`,
+      `${process.env.API_URL}letscookinapps/users`,
       { name, email, password, phoneNumber: phone }
     );
 

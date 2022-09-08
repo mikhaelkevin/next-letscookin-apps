@@ -45,7 +45,7 @@ const EditForm = (props) => {
       formData.append("id", recipeId);
 
       const response = await axios.patch(
-        `${process.env.CLIENT_API_URL}/letscookinapps/recipes/`,
+        `${process.env.CLIENT_API_URL}letscookinapps/recipes/`,
         formData,
         {
           headers: {
