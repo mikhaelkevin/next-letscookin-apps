@@ -18,6 +18,7 @@ export default function RegisterForm() {
 
   const requestRegister = async (e) => {
     try {
+      setIsSuccess(true);
       setIsError(false);
       setPasswordStatus(false);
       e.preventDefault();
@@ -28,7 +29,6 @@ export default function RegisterForm() {
       }
       const data = { name, email, phone, password };
       await axios.post("/api/register", data);
-      setIsSuccess(true);
       setTimeout(() => router.push("/login"), 2000);
     } catch (error) {
       setIsError(true);
@@ -43,7 +43,7 @@ export default function RegisterForm() {
       ) : null}
 
       {isSuccess && (
-        <div className="alert alert-success text-center">
+        <div className="alert alert-success text-center" data-testid='register-success'>
           Register successfuly! Redirecting to login page, please wait...
         </div>
       )}

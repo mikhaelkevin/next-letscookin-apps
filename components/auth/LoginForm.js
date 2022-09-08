@@ -27,7 +27,7 @@ export default function LoginForm() {
       setTimeout(() => {
         router.push("/");
         setIsSuccess(false);
-        }, 2000);
+      }, 2000);
     } catch (err) {
       setIsError(true);
       setIsSuccess(false);
