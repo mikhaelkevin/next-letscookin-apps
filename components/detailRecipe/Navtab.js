@@ -56,14 +56,14 @@ export default function Navtab(props) {
           Ingredients
         </a>
       </li>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <a
           className={`nav-link bottomDetailNavtabFont ${videosIsActive}`}
           onClick={() => menuSelector("videos")}
         >
           Videos
         </a>
-      </li>
+      </li> */}
       <li className="nav-item">
         <a
           className={`nav-link bottomDetailNavtabFont ${commentIsActive}`}

@@ -15,7 +15,7 @@ export default function LoginForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const loginRequest = async (e) => {
-    setIsSuccess(false);
+    setIsSuccess(true);
     setIsError(false);
     try {
       e.preventDefault();
@@ -26,9 +26,11 @@ export default function LoginForm() {
       );
       setTimeout(() => {
         router.push("/");
-      }, 2000);
+        setIsSuccess(false);
+        }, 2000);
     } catch (err) {
       setIsError(true);
+      setIsSuccess(false);
       setErrorMessage(err?.response?.data?.message);
     }
   };
