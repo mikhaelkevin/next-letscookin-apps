@@ -4,7 +4,7 @@ const deleteRecipe = async (req, res) => {
   try {
     const { recipeId, token } = req.query;
     const response = await axios.delete(
-      `${process.env.CLIENT_API_URL}letscookinapps/recipes`,
+      `${process.env.CLIENT_API_URL}/letscookinapps/recipes`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

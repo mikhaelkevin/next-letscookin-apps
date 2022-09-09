@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 export const getStaticPaths = async () => {
   try {
     const recipeList = await fetch(
-      `${process.env.API_URL}letscookinapps/recipes/`
+      `${process.env.API_URL}/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList.json();
@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   try {
     const detailRecipe = await axios.post(
-      `${process.env.API_URL}letscookinapps/recipes/detail/`,
+      `${process.env.API_URL}/letscookinapps/recipes/detail/`,
       { id: params?.id }
     );
     const detailRecipeData = await detailRecipe?.data;
@@ -128,8 +128,8 @@ export default function DetailRecipe({ detailRecipe }) {
       setIsError(true);
       setMessage(
         error?.response?.data ||
-          error?.response?.data?.message ||
-          "Something went wrong on client side"
+        error?.response?.data?.message ||
+        "Something went wrong on client side"
       );
       console.log("error", error);
     }

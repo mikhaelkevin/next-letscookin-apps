@@ -50,12 +50,12 @@ const MyRecipePage = () => {
     if (!token) {
       router.push("/login");
     }
+    getMyRecipe(user?.id);
     setIsError(false);
     setIsSuccess(false);
     setAppendDelAlert(false);
     setIsLoading(false);
     setDelTarget(0);
-    getMyRecipe(user?.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess]);
 
@@ -97,8 +97,7 @@ const MyRecipePage = () => {
             </div>
           )}
 
-            {isError && <div className="alert alert-danger text-center">{message}</div>}
-
+          {isError && <div className="alert alert-danger text-center">{message}</div>}
           {myRecipe?.map((recipe) => (
             <div className="card box-shadow" key={recipe.id}>
               <div className="row d-flex justify-content-center align-items-center">

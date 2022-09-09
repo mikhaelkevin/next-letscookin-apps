@@ -8,11 +8,11 @@ import React from "react";
 export const getStaticProps = async (req, res) => {
   try {
     const newRecipeResponse = await fetch(
-      `${process.env.API_URL}letscookinapps/recipes/new-recipe/`
+      `${process.env.API_URL}/letscookinapps/recipes/new-recipe/`
     );
 
     const recipeList = await fetch(
-      `${process.env.API_URL}letscookinapps/recipes/`
+      `${process.env.API_URL}/letscookinapps/recipes/`
     );
 
     const recipeListData = await recipeList?.json();
@@ -50,6 +50,7 @@ export default function Home(props) {
     if (dataSorting === 'DESC') {
       setRecipeData(recipeList?.slice(0, showData).sort((a, b) => b?.title > a?.title ? 1 : -1))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataSorting, showData])
 
 
