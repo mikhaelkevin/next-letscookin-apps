@@ -10,14 +10,14 @@ export default function LoginForm() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const loginRequest = async (e) => {
-    setIsSuccess(true);
-    setIsError(false);
     try {
+      setIsLoading(true);
       e.preventDefault();
       const response = await axios.post("/api/login", { email, password });
       setIsSuccess(true);
@@ -26,11 +26,10 @@ export default function LoginForm() {
       );
       setTimeout(() => {
         router.push("/");
-        setIsSuccess(false);
       }, 2000);
     } catch (err) {
+      setIsLoading(false);
       setIsError(true);
-      setIsSuccess(false);
       setErrorMessage(err?.response?.data?.message);
     }
   };
@@ -85,7 +84,7 @@ export default function LoginForm() {
         <p className="text-end">
           <a className="text-secondary">Forgot password?</a>
         </p>
-        <button className="btn btn-warning btn-lg w-100" disabled={isSuccess}>
+        <button className="btn btn-warning btn-lg w-100" disabled={isLoading}>
           LOG IN
         </button>
       </form>

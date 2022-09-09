@@ -11,6 +11,7 @@ export default function RegisterForm() {
   const [rePassword, setRePassword] = useState("");
   const [revealPassword, setRevealPassword] = useState("password");
   const [passwordStatus, setPasswordStatus] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -18,7 +19,7 @@ export default function RegisterForm() {
 
   const requestRegister = async (e) => {
     try {
-      setIsSuccess(true);
+      setIsLoading(true);
       setIsError(false);
       setPasswordStatus(false);
       e.preventDefault();
@@ -29,9 +30,11 @@ export default function RegisterForm() {
       }
       const data = { name, email, phone, password };
       await axios.post("/api/register", data);
+      setIsSuccess(true);
       setTimeout(() => router.push("/login"), 2000);
     } catch (error) {
       setIsError(true);
+      setIsLoading(false);
       setErrorMessage(error?.response?.data);
     }
   };
@@ -43,7 +46,7 @@ export default function RegisterForm() {
       ) : null}
 
       {isSuccess && (
-        <div className="alert alert-success text-center" data-testid='register-success'>
+        <div className="alert alert-success text-center">
           Register successfuly! Redirecting to login page, please wait...
         </div>
       )}
@@ -151,7 +154,7 @@ export default function RegisterForm() {
         </h5>
         <button
           className="btn btn-warning btn-lg w-100 mt-4"
-          disabled={isSuccess}
+          disabled={isLoading}
         >
           REGISTER
         </button>
