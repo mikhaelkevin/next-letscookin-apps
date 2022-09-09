@@ -50,6 +50,7 @@ export default function Home(props) {
     if (dataSorting === 'DESC') {
       setRecipeData(recipeList?.slice(0, showData).sort((a, b) => b?.title > a?.title ? 1 : -1))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataSorting, showData])
 
 

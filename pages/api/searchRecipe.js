@@ -4,7 +4,7 @@ const searchRecipe = async (req, res) => {
   let { searchValue } = req.query;
   try {
     const response = await axios.get(
-      `${process.env.API_URL}letscookinapps/recipes/search/${searchValue.trim()}`
+      `${process.env.CLIENT_API_URL}/letscookinapps/recipes/search/${searchValue.trim()}`
     );
     res.status(200).json(response?.data);
   } catch (error) {
