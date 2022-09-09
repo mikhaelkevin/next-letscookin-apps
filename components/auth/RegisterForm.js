@@ -11,6 +11,7 @@ export default function RegisterForm() {
   const [rePassword, setRePassword] = useState("");
   const [revealPassword, setRevealPassword] = useState("password");
   const [passwordStatus, setPasswordStatus] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -18,6 +19,7 @@ export default function RegisterForm() {
 
   const requestRegister = async (e) => {
     try {
+      setIsLoading(true);
       setIsError(false);
       setPasswordStatus(false);
       e.preventDefault();
@@ -32,6 +34,7 @@ export default function RegisterForm() {
       setTimeout(() => router.push("/login"), 2000);
     } catch (error) {
       setIsError(true);
+      setIsLoading(false);
       setErrorMessage(error?.response?.data);
     }
   };
@@ -151,7 +154,7 @@ export default function RegisterForm() {
         </h5>
         <button
           className="btn btn-warning btn-lg w-100 mt-4"
-          disabled={isSuccess}
+          disabled={isLoading}
         >
           REGISTER
         </button>

@@ -35,24 +35,22 @@ export default function Home(props) {
   const totalRecipes = recipeList?.length;
 
   const [showData, setShowData] = React.useState(5);
-  const [dataSorting, setDataSorting] = React.useState('ASC');
+  const [dataSorting, setDataSorting] = React.useState('');
   const [recipeData, setRecipeData] = React.useState(recipeList?.slice(0, showData));
 
   React.useEffect(() => {
     localStorage.removeItem("search")
   }, []);
-  
+
   React.useEffect(() => {
-    console.log('recipeList', recipeList)
-    setRecipeData(recipeList?.slice(0, showData))
-    if(dataSorting === 'ASC'){
-      recipeList?.sort((a,b) => a?.title > b?.title ? 1 : -1)
+    if (dataSorting === 'ASC') {
+      setRecipeData(recipeList?.slice(0, showData).sort((a, b) => a?.title > b?.title ? 1 : -1))
     }
-    
-    if(dataSorting === 'DESC'){
-      recipeList?.sort((a,b) => b?.title > a?.title ? 1 : -1)
+
+    if (dataSorting === 'DESC') {
+      setRecipeData(recipeList?.slice(0, showData).sort((a, b) => b?.title > a?.title ? 1 : -1))
     }
-  } , [dataSorting, showData])
+  }, [dataSorting, showData])
 
 
   return (
@@ -66,22 +64,22 @@ export default function Home(props) {
       </div>
       <NewRecipe data={newRecipe} />
       <div className={styles.recipeContent}>
-      <div className={styles.recipeListTitle}>
-        <h1 className="fontResponsive">Recipes</h1>
-        <label htmlFor="sortBy">
-          Sort By {' '}
-        <select name="sortBy" id="sortBy" onChange={(e) => setDataSorting(e?.target?.value)}>
-          <option hidden/>
-          <option value="ASC">A - Z</option>
-          <option value="DESC">Z - A</option>
-        </select>
-        </label>
-      </div>
+        <div className={styles.recipeListTitle}>
+          <h1 className="fontResponsive">Recipes</h1>
+          <label htmlFor="sortBy">
+            Sort By {' '}
+            <select name="sortBy" id="sortBy" onChange={(e) => setDataSorting(e?.target?.value)}>
+              <option hidden />
+              <option value="ASC">A - Z</option>
+              <option value="DESC">Z - A</option>
+            </select>
+          </label>
+        </div>
         <div className="mb-3">
-          <RecipeList data={recipeData} sort={dataSorting} />
+          <RecipeList data={recipeData} />
         </div>
         <div className="row d-flex justify-content-center mb-2">
-          {showData < totalRecipes && <button type="button" className="btn btn-primary w-50" onClick={() => setShowData(showData+5)}>Load more</button>}
+          {showData < totalRecipes && <button type="button" className="btn btn-primary w-50" onClick={() => setShowData(showData + 5)}>Load more</button>}
           {showData >= totalRecipes && <p className="text-center text-muted fst-italic">End of recipe list</p>}
         </div>
       </div>
