@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 
 #unit testing
-/__test__
+__test__/
