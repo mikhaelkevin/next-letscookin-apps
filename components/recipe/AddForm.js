@@ -32,7 +32,7 @@ const AddForm = ({ data, setter }) => {
     formData.append("userId", user?.id);
     try {
       const response = await axios.post(
-        `${process.env.CLIENT_API_URL}letscookinapps/recipes/`,
+        `${process.env.CLIENT_API_URL}/letscookinapps/recipes/`,
         formData,
         {
           headers: {

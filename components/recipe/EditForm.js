@@ -29,8 +29,8 @@ const EditForm = (props) => {
       setIsError(true);
       setMessage(
         error?.response?.data?.message ||
-          error?.response?.data ||
-          "Something wrong with the server"
+        error?.response?.data ||
+        "Something wrong with the server"
       );
     }
   };
@@ -45,7 +45,7 @@ const EditForm = (props) => {
       formData.append("id", recipeId);
 
       const response = await axios.patch(
-        `${process.env.CLIENT_API_URL}letscookinapps/recipes/`,
+        `${process.env.CLIENT_API_URL}/letscookinapps/recipes/`,
         formData,
         {
           headers: {
@@ -64,8 +64,8 @@ const EditForm = (props) => {
       setIsError(true);
       setMessage(
         error?.response?.data?.message ||
-          error?.response?.data ||
-          "Something wrong with the server"
+        error?.response?.data ||
+        "Something wrong with the server"
       );
     }
   };
