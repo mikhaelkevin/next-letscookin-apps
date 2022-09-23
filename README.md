@@ -120,41 +120,41 @@ SECRET_KEY=example
 <p align="center" display=flex>
    
 <table>
-<tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Login Page</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Register Page</td>
+<tr align="center">
+    <td style='font-weight: 600'>Login Page</td>
+    <td style='font-weight: 600'>Register Page</td>
   </tr>
   <tr align="center">
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712276/temp-next-lets-cookin/login_ykkrde.png" alt="login" width=50%></td>
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712276/temp-next-lets-cookin/register_fqrq9c.png" alt ="register" width=50%/></td>
   </tr>
-   <tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Landing Page</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Detail Recipe</td>
+   <tr align="center">
+    <td style='font-weight: 600'>Landing Page</td>
+    <td style='font-weight: 600'>Detail Recipe</td>
   </tr>
   <tr align="center">
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662713163/temp-next-lets-cookin/login_olx0mv.png" alt="landing-page" width=50%></td>
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712277/temp-next-lets-cookin/detail_kd4i0c.png" alt="detail-recipe" width=50%/></td>
   </tr>
-  <tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>New Recipe</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Edit Recipe</td>
+  <tr align="center">
+    <td style='font-weight: 600'>New Recipe</td>
+    <td style='font-weight: 600'>Edit Recipe</td>
   </tr>
   <tr align="center">
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712813/temp-next-lets-cookin/add-recipe_hxovjn.png" alt="new-recipe" width=50%></td>
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712815/temp-next-lets-cookin/edit_recipe_j9n5vf.png" alt="edit-recipe" width=50%/></td>
   </tr>
-  <tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Delete Recipe</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>My Recipe</td>
+  <tr align="center">
+    <td style='font-weight: 600'>Delete Recipe</td>
+    <td style='font-weight: 600'>My Recipe</td>
   </tr>
   <tr align="center">
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712814/temp-next-lets-cookin/delete-recipe_ylkq2h.png" alt="delete-recipe" width=50%></td>
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662712813/temp-next-lets-cookin/my-recipe_atiahq.png" alt="my-recipe" width=50%/></td>
   </tr>
-  <tr>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Profile</td>
-    <td style='text-align: center; background-color: #6661; font-weight: 600'>Edit Profile</td>
+  <tr align="center">
+    <td style='font-weight: 600'>Profile</td>
+    <td style='font-weight: 600'>Edit Profile</td>
   </tr>
   <tr align="center">
     <td><image src="https://res.cloudinary.com/nocturncloud/image/upload/v1662713264/temp-next-lets-cookin/profile_autweg.png" alt="profile" width=50%></td>

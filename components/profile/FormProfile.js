@@ -53,7 +53,7 @@ const FormProfile = () => {
       formData.append("id", user.id);
 
       const response = await axios.patch(
-        `${process.env.CLIENT_API_URL}letscookinapps/users`,
+        `${process.env.CLIENT_API_URL}/letscookinapps/users`,
         formData,
         {
           headers: {
